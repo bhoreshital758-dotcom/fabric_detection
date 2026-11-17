@@ -1,9 +1,9 @@
 "$schema" = "https://open-api.netlify.com/netlify.schema.json"
 
 [build]
-  base = "application"
+  base = "application2"
   publish = "dist"
-  command = "npm run build"
+  command = "npm ci --include=dev && npm run build"
   environment = { NODE_VERSION = "20" }
 
 # Optional: Proxy API requests to your hosted backend (e.g., Hugging Face Spaces, Render, or Railway)
