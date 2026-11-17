@@ -1,6 +1,7 @@
 import { PredictionResult, AIInsights } from '../types/fabric';
 
-const API_BASE = '/api';
+const RAW_API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+const API_BASE = RAW_API_BASE.replace(/\/+$/, '');
 
 export async function predictFabric(imageFile: File | Blob): Promise<PredictionResult> {
   const formData = new FormData();

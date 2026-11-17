@@ -1,0 +1,21 @@
+"$schema" = "https://open-api.netlify.com/netlify.schema.json"
+
+[build]
+  base = "application"
+  publish = "dist"
+  command = "npm run build"
+  environment = { NODE_VERSION = "20" }
+
+# Optional: Proxy API requests to your hosted backend (e.g., Hugging Face Spaces, Render, or Railway)
+# Uncomment and replace with your backend URL if using Netlify proxy routing:
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://YOUR_BACKEND_URL.hf.space/api/:splat"
+#   status = 200
+#   force = true
+
+# SPA client-side routing fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
